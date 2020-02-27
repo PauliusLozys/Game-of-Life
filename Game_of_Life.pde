@@ -2,18 +2,19 @@ int Dydis = 20;
 int Stulp = 0;
 int Eil = 0;
 int[][] Life;
+
 void setup()
 {
-  //size(800,600);
-  fullScreen();
+  size(900,800);
+  //fullScreen();
   background(0);
   Stulp = width/Dydis;
   Eil = height/Dydis;
-  Life = CreateGrid(Stulp,Eil);
-  //Life = CreateEmptyGrid(Stulp,Eil);
+  Life = CreateGrid(Stulp,Eil); // Random generated grid
+  //Life = CreateEmptyGrid(Stulp,Eil); // Empty grid
 }
 
-boolean keypressed = true;
+boolean keypressed = true; // Will make the game enter "edit" mode automaticly
 
 void draw()
 {

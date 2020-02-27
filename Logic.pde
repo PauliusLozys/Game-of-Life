@@ -59,21 +59,35 @@ void UpdateLife() // Updates The grid
     Life = Copy;
 }
 
+int x_temp = -1;
+int y_temp = -1;
+
 void EditGrid()
-{
+{ 
   if(mousePressed == true)
   {
     int x = mouseX/Dydis,
         y = mouseY/Dydis;
-    if(Life[x][y] == 1)
-    { 
-      Life[x][y] = 0;
-    }
-    else
+        
+    if(x != x_temp || y != y_temp)
     {
-      Life[x][y] = 1;
+      if(Life[x][y] == 1) // Alive -> Dead
+      { 
+        Life[x][y] = 0;
+      }
+      else // Dead -> Alive
+      {
+        Life[x][y] = 1;
+      }
+      
+      x_temp = x;
+      y_temp = y;
     }
-    delay(150);
+  }
+  else 
+  {
+    x_temp = -1;
+    y_temp = -1;
   }
 }
 

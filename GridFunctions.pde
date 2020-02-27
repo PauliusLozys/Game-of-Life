@@ -8,7 +8,7 @@ void DrawGrid()
     {      
       if(Life[x][y] == 1) // Alive is white
       {
-        fill(150,200,20);
+        fill(170,200,100);
       }
       else
       {
